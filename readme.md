@@ -5,6 +5,13 @@
 2 LangIndex + huggingFaceLLM
 3 RAG - DeepSeek + LlamaIndex + Streamlit
 
+## LLAMAINDEX-RAG RAG项目实战(使用llamaindex构建自己的知识库) 
+- 1.环境配置  [text](LLAMAINDEX-RAG/readme.md)
+- 2.下载Sentence Transformer 模型  [text](LLAMAINDEX-RAG/readme.md)
+- 3.下载InternLM2 1.8B/qwen2.5_0.5B 模型  [text](LLAMAINDEX-RAG/readme.md)
+- 4.创建知识库 [text](LLAMAINDEX-RAG/readme.md)
+- 5.创建web应用 [text](LLAMAINDEX-RAG/readme.md)
+
 
 ## Ollama
 [Ollama/Chap01_教程.md](Ollama/Chap01_教程.md)

@@ -1,3 +1,10 @@
+#LLAMAINDEX-RAG 私有化部署RAG实例
+- 1.环境配置
+- 2.下载Sentence Transformer 模型 
+- 3.下载InternLM2 1.8B/qwen2.5_0.5B 模型 
+- 4.创建知识库
+- 5.创建web应用
+
 # Ollama 基本概念
 Ollama 是一个本地化的、支持多种自然语言处理（NLP）任务的机器学习框架，专注于模型加载、推理和生成任务。
 
