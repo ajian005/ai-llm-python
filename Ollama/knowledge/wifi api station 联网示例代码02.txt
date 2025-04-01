@@ -1,0 +1,43 @@
+station的联网流程在wm iot sdk 需要使用 wifi api来编程，
+通常的步骤为:
+1.初始化wifi
+2.设置联网参数
+3.执行联网动作
+4.等待联网结果，这个通常使用事件捕捉
+
+下面是联网的示例代码
+1.初始化wifi： int = wm_wifi_init();
+2.设置事件捕捉回调函数:wm_event_add_callback
+static int wm_event_send_internal_ev(enum wm_ev_op_type_e op, wm_event_group_t group, int event, wm_event_callback cb,
+                                     void *priv)
+{
+    struct wm_ev_header_t *ev = NULL;
+
+    if ((op == MSG_ADD || op == MSG_REMOVE) && !cb) {
+        /*callback must valid*/
+        return WM_ERR_INVALID_PARAM;
+    }
+
+    ev = wm_os_internal_malloc(sizeof(*ev));
+    if (!ev) {
+        return WM_ERR_NO_MEM;
+    }
+
+    /*pack items to ev*/
+    ev->op    = op;
+    ev->group = group;
+    ev->ev    = event;
+    ev->cb    = cb;
+    ev->priv  = priv;
+
+    WM_EV_LOG_I("send %d", op);
+
+    if (g_ev_queue && wm_os_internal_queue_send(g_ev_queue, ev) == WM_OS_STATUS_SUCCESS) {
+        /*send OK*/
+        return WM_ERR_SUCCESS;
+    } else {
+        /*send fail*/
+        wm_os_internal_free(ev);
+        return WM_ERR_FAILED;
+    }
+}

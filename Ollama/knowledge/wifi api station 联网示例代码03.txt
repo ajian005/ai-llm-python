@@ -1,0 +1,3 @@
+3.设置联网参数: wm_wifi_config_t wifi_config = test();
+4.启动联网流程:err = wm_wifi_connect();
+5.最后由event_handler_sta_got_ip回调函数 function=xxx();

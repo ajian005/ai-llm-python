@@ -1,0 +1,7 @@
+wm iot sdk 介绍
+
+WM_IoT_SDK 是 WinnerMicro 官方推出的物联网软件开发套件，支持 💻 Windows 和 🐧 Linux 和 maxOS操作系统,是W80X系列芯片的官方开发框架
+
+WM IoT SDK 编程指南 https://doc.winnermicro.net/w800/zh_CN/latest/
+
+WM Iot SDK 下载地址 https://doc.winnermicro.net/download/version/
