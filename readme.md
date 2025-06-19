@@ -1,3 +1,7 @@
+
+# DMPAPI 
+  DMPAPI: https://dmxapi.cn/models.html#code-block
+
 # ai-llm-python
 
 私有化部署RAG实例
