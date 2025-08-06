@@ -1,6 +1,5 @@
 
-# DMPAPI 
-  DMPAPI: https://dmxapi.cn/models.html#code-block
+
 
 # ai-llm-python
 
@@ -8,6 +7,13 @@
 1 LangChain + Ollama
 2 LangIndex + huggingFaceLLM
 3 RAG - DeepSeek + LlamaIndex + Streamlit
+
+## DMPAPI 
+  DMPAPI: https://dmxapi.cn/models.html#code-block
+
+## LangChain
+    
+
 
 ## LLAMAINDEX-RAG RAG项目实战(使用llamaindex构建自己的知识库) 
 - 1.环境配置  [text](LLAMAINDEX-RAG/readme.md)
