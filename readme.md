@@ -12,7 +12,7 @@
 
 ## LangChain
     
-
+   How-to guides  https://python.langchain.com/docs/how_to/
 
 ## LLAMAINDEX-RAG RAG项目实战(使用llamaindex构建自己的知识库) 
 - 1.环境配置  [text](LLAMAINDEX-RAG/readme.md)

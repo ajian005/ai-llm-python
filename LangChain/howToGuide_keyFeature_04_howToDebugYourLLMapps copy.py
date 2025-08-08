@@ -1,5 +1,5 @@
 """
-How to debug your LLM apps : https://python.langchain.com/docs/how_to/debugging/
+How to: init any model in one line : https://python.langchain.com/docs/how_to/chat_models_universal_init/
 
     There are three main methods for debugging:
     Verbose Mode: This adds print statements for "important" events in your chain.
