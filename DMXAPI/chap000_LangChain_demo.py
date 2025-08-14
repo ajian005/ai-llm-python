@@ -12,5 +12,14 @@ model = ChatOpenAI(
     base_url="https://www.dmxapi.cn/v1",
     api_key=api_key_temp,  # 替换成你的 DMXapi 令牌key
 )
+
+llm = ChatOpenAI(
+    openai_api_key=os.environ["DMXAPI_API_KEY"],
+    openai_api_base="https://www.dmxapi.cn/v1",  # 第三方平台地址
+    model_name="gpt-3.5-turbo"  # 确认第三方平台支持的模型名称
+)
+
 text = "周树人和鲁迅是兄弟吗？"
-print(model(text))
+print(model.invoke(text))
+print("======================================")
+print(llm.invoke(text))
