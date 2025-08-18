@@ -23,13 +23,13 @@ prompt = ChatPromptTemplate(
         },
     ])
 
-
 from langchain.chat_models import init_chat_model
 llm = init_chat_model("anthropic:claude-3-5-sonnet-latest")
 url = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg"
 chain = prompt | llm
 response = chain.invoke({"image_url": url})
 print(response.text())
+
 
 prompt = ChatPromptTemplate(
     [
@@ -49,14 +49,10 @@ prompt = ChatPromptTemplate(
                 },
             ],
         },
-    ]
-)
-
+    ])
 
 import base64
-
 import httpx
-
 image_data = base64.b64encode(httpx.get(url).content).decode("utf-8")
 
 chain = prompt | llm
@@ -64,7 +60,7 @@ response = chain.invoke(
     {
         "image_data": image_data,
         "image_mime_type": "image/jpeg",
-        "cache_type": "ephemeral",
-    }
-)
+        "cache_type": "ephemeral", })
 print(response.text())
+
+
