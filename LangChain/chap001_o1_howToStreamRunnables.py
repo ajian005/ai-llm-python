@@ -36,8 +36,13 @@ prompt = ChatPromptTemplate.from_template("tell me a joke about {topic}")
 parser = StrOutputParser()
 chain = prompt | llm | parser
 
-async for chunk in chain.astream({"topic": "parrot"}):
-    print(chunk, end="|", flush=True)
+import asyncio
+
+async def run_async_stream():
+    async for chunk in chain.astream({"topic": "parrot"}):
+        print(chunk, end="|", flush=True)
+
+asyncio.run(run_async_stream())
 
 
 # Non-streaming components
