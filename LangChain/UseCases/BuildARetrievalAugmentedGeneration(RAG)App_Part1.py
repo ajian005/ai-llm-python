@@ -12,9 +12,8 @@ export LANGSMITH_API_KEY="..."
 '''
 import os
 import getpass
-os.environ["LANGSMITH_TRACING"] = "true"
-os.environ["LANGSMITH_API_KEY"] =  "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" # getpass.getpass()
-
+# os.environ["LANGSMITH_TRACING"] = "true"
+# os.environ["LANGSMITH_API_KEY"] =  "" # getpass.getpass()
 
 """  Components  """
 
