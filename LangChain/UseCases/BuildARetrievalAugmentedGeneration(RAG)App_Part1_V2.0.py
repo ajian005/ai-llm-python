@@ -11,7 +11,6 @@ export LANGSMITH_TRACING="true"
 export LANGSMITH_API_KEY="..."
 '''
 import os
-import getpass
 
 os.environ["LANGSMITH_PROJECT"]  =  "pr-indelible-mill-79"
 os.environ["LANGSMITH_TRACING"]  =  "true"
@@ -22,6 +21,12 @@ os.environ["LANGSMITH_ENDPOINT"] =  "https://api.smith.langchain.com"
 
 """  Components ---> Select OpenAI chat model """
 from langchain.chat_models import init_chat_model
+
+from typing import Annotated
+from typing import Literal
+
+
+
 # 初始化 OpenAI 模型
 llm = init_chat_model(
     model="gpt-4o-mini", 
@@ -76,6 +81,20 @@ text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000,    # chunk size 
 all_splits = text_splitter.split_documents(docs)
 print(f"Split blog post into {len(all_splits)} sub-documents.")
 
+
+# Update metadata (illustration purposes)
+total_documents = len(all_splits)
+third = total_documents // 3
+
+for i, document in enumerate(all_splits):
+    if i < third:
+        document.metadata["section"] = "beginning"
+    elif i < 2 * third:
+        document.metadata["section"] = "middle"
+    else:
+        document.metadata["section"] = "end"
+
+
 # Index chunks
 # Storing documents
 document_ids = vector_store.add_documents(documents=all_splits)
@@ -92,15 +111,35 @@ example_messages = prompt.invoke({"context": "(context goes here)", "question": 
 assert len(example_messages) == 1
 print(example_messages[0].content)
 
+
+# Define schema for search
+class Search(TypedDict):
+    """Search query."""
+
+    query: Annotated[str, "Search query to run."]
+    section: Annotated[
+        Literal["beginning", "middle", "end"],
+        ...,
+        "Section to query.",
+    ]
+
 # Define state for application
 class State(TypedDict):
     question: str
+    query: Search
     context: List[Document]
     answer: str
 
+def analyze_query(state: State):
+    structured_llm = llm.with_structured_output(Search)
+    query = structured_llm.invoke(state["question"])
+    return {"query": query}
+
 # Define application steps
 def retrieve(state: State):
-    retrieved_docs = vector_store.similarity_search(state["question"])
+    query = state["query"]
+    retrieved_docs = vector_store.similarity_search(state["question"],
+        filter=lambda doc: doc.metadata.get("section")  == query["section"])
     return {"context": retrieved_docs}
 
 def generate(state: State):
@@ -111,8 +150,8 @@ def generate(state: State):
 
 
 # LangGraph:Compile application and test
-graph_builder = StateGraph(State).add_sequence([retrieve, generate])
-graph_builder.add_edge(START, "retrieve")
+graph_builder = StateGraph(State).add_sequence([analyze_query, retrieve, generate])
+graph_builder.add_edge(START, "analyze_query")
 graph = graph_builder.compile()
 
 from IPython.display import Image, display
@@ -136,7 +175,4 @@ for message, metadata in graph.stream(
     {"question": "What is Task Decomposition?"}, stream_mode="messages"
 ):
     print(message.content, end="|")
-
-
-""" Query analysis """
 
