@@ -11,10 +11,10 @@
   DMPAPI: https://dmxapi.cn/models.html#code-block
 
 ## LangChain
-   How-to guides  https://python.langchain.com/docs/how_to/
+   How-to guides : https://python.langchain.com/docs/how_to/
 
 ## LangGraph
-   
+   LangGraph guides : https://langchain-ai.github.io/langgraph/guides/
 
 ## LLAMAINDEX-RAG RAG项目实战(使用llamaindex构建自己的知识库) 
 - 1.环境配置  [text](LLAMAINDEX-RAG/readme.md)
