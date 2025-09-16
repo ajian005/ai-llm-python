@@ -487,3 +487,102 @@ If your LLM is not available as a LangChain integration, you can stream its outp
 
 """
 
+"""
+=====Stream custom data===================================================
+To send custom user-defined data from inside a LangGraph node or tool, follow these steps:
+
+Use get_stream_writer() to access the stream writer and emit custom data.
+Set stream_mode="custom" when calling .stream() or .astream() to get the custom data in the stream. You can combine multiple modes (e.g., ["updates", "custom"]), but at least one must be "custom".
+
+---- node ----------------------------------
+    from typing import TypedDict
+    from langgraph.config import get_stream_writer
+    from langgraph.graph import StateGraph, START
+
+    class State(TypedDict):
+        query: str
+        answer: str
+
+    def node(state: State):
+        writer = get_stream_writer()  
+        writer({"custom_key": "Generating custom data inside node"}) 
+        return {"answer": "some data"}
+
+    graph = (
+        StateGraph(State)
+        .add_node(node)
+        .add_edge(START, "node")
+        .compile()
+    )
+
+    inputs = {"query": "example"}
+
+    # Usage
+    for chunk in graph.stream(inputs, stream_mode="custom"):  
+        print(chunk)
+
+
+---- tool ----------------------------------
+    from langchain_core.tools import tool
+    from langgraph.config import get_stream_writer
+
+    @tool
+    def query_database(query: str) -> str:
+        ''' Query the database. '''
+        writer = get_stream_writer() 
+        writer({"data": "Retrieved 0/100 records", "type": "progress"}) 
+        # perform query
+        writer({"data": "Retrieved 100/100 records", "type": "progress"}) 
+        return "some-answer"
+
+
+    graph = ... # define a graph that uses this tool
+
+    for chunk in graph.stream(inputs, stream_mode="custom"): 
+        print(chunk)
+
+"""
+
+
+"""
+=====Use with any LLM===================================================
+
+You can use stream_mode="custom" to stream data from any LLM API — even if that API does not implement the LangChain chat model interface.
+
+This lets you integrate raw LLM clients or external services that provide their own streaming interfaces, making LangGraph highly flexible for custom setups.
+
+
+
+
+
+
+"""
+
+"""
+=====Disable streaming for specific chat models===================================================
+  
+If your application mixes models that support streaming with those that do not, you may need to explicitly disable streaming for models that do not support it.
+
+Set disable_streaming=True when initializing the model.
+
+
+-----init_chat_model----------------------
+from langchain.chat_models import init_chat_model
+
+model = init_chat_model(
+    "anthropic:claude-3-7-sonnet-latest",
+    disable_streaming=True 
+)
+
+-----chat model interface----------------------
+from langchain_openai import ChatOpenAI
+
+llm = ChatOpenAI(model="o1-preview", disable_streaming=True)
+
+
+
+
+"""
+
+
+
