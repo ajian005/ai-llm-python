@@ -1,5 +1,24 @@
 ## 本地环境 python3_12_4:conda
 
+
+# Alibaba-BaiLian产品
+  阿里云的大模型服务平台百炼是一站式的大模型开发及应用构建平台
+  https://help.aliyun.com/zh/model-studio/what-is-model-studio?spm=a2c4g.11174283.0.i0
+
+## 阿里云百炼-模型
+  ### 大模型服务平台百炼 --> 用户指南（模型）
+    https://help.aliyun.com/zh/model-studio/get-started-with-models/?spm=a2c4g.11186623.help-menu-2400256.d_0_0.39242bdbhc8Fqp&scm=20140722.H_2878464._.OR_help-T_cn~zh-V_1
+    
+  ### 大模型服务平台百炼 --> API参考（模型）
+    https://help.aliyun.com/zh/model-studio/preparations/?spm=a2c4g.11186623.help-menu-2400256.d_2_0.4bce56307fVwV9
+
+## 阿里云百炼-应用
+  ### 大模型服务平台百炼 --> 用户指南（应用）
+    https://help.aliyun.com/zh/model-studio/start-using/?spm=a2c4g.11186623.help-menu-2400256.d_1_0.3afb60e9h1wPQS
+
+  ### 大模型服务平台百炼 --> API参考（应用）
+    https://help.aliyun.com/zh/model-studio/application-call/?spm=a2c4g.11186623.help-menu-2400256.d_3_0.1ae72bdbwYfzAt
+
 # ai-llm-python
 
 私有化部署RAG实例
