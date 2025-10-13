@@ -20,9 +20,11 @@ messages = [
         ]
     }
 ]
+print("messages" +  os.getenv("DASHSCOPE_API_KEY"))
 response = dashscope.MultiModalConversation.call(
     # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key = "sk-xxx"
     api_key=os.getenv("DASHSCOPE_API_KEY"),
+
     model="qwen3-asr-flash",
     messages=messages,
     result_format="message",
