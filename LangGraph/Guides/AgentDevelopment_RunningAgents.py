@@ -37,7 +37,7 @@ Inputs and outputs
     Agent input must be a dictionary with a messages key. Supported formats are:
     Format	            Example
     String	            {"messages": "Hello"}                                                      — Interpreted as a HumanMessage
-    Message dictionary	{"messages": {"role": "user", "content": "Hello"}}
+    Message dictionary	{"messages":  {"role": "user", "content": "Hello"}}
     List of messages	{"messages": [{"role": "user", "content": "Hello"}]}
     With custom state	{"messages": [{"role": "user", "content": "Hello"}], "user_name": "Alice"} — If using a custom state_schema
 """
