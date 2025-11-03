@@ -1,0 +1,4 @@
+"""
+    Application structure   https://docs.langchain.com/oss/python/langgraph/application-structure
+
+"""
