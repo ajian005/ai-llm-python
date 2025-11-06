@@ -3,6 +3,12 @@
 
 ## 本地环境 python3_12_4:conda
 
+## Spring-AI-Alibaba-Java 产品
+  ### Spring AI Alibaba 概览
+     https://java2ai.com/docs/1.0.0.2/overview/?spm=4347728f.6476bf87.0.0.a3c1556b0XaB3O
+
+  ### spring-ai-alibaba 
+     https://github.com/spring-ai-alibaba
 
 ## Alibaba-BaiLian产品
   阿里云的大模型服务平台百炼是一站式的大模型开发及应用构建平台

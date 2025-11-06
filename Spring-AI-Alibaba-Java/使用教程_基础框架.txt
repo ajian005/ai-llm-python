@@ -1,0 +1,35 @@
+一、核心基础
+  核心概念 : https://java2ai.com/docs/1.0.0.2/tutorials/basics/concepts/?spm=4347728f.7cee0e64.0.0.39076dd131wtCh
+  对话模型(Chat Model)  https://java2ai.com/docs/1.0.0.2/tutorials/basics/chat-model/?spm=4347728f.7cee0e64.0.0.39076dd131wtCh
+  ChatClient  https://java2ai.com/docs/1.0.0.2/tutorials/basics/chat-client/?spm=4347728f.7cee0e64.0.0.39076dd131wtCh
+  Advisors API : https://java2ai.com/docs/1.0.0.2/tutorials/basics/advisors/?spm=4347728f.7cee0e64.0.0.39076dd131wtCh
+  格式化输出(Structured Output) https://java2ai.com/docs/1.0.0.2/tutorials/basics/structured-output/?spm=4347728f.582ec1f2.0.0.220957c3FIDOCO
+  提示词 (Prompt) https://java2ai.com/docs/1.0.0.2/tutorials/basics/prompt/?spm=4347728f.582ec1f2.0.0.220957c3FIDOCO
+  提示词工程模式 (Prompt Engineering Patterns) https://java2ai.com/docs/1.0.0.2/tutorials/basics/prompt-engineering-patterns/?spm=4347728f.582ec1f2.0.0.220957c3FIDOCO
+  对话记忆  https://java2ai.com/docs/1.0.0.2/tutorials/basics/memory/?spm=4347728f.582ec1f2.0.0.220957c3FIDOCO
+  多模态 https://java2ai.com/docs/1.0.0.2/tutorials/basics/multimodality/?spm=4347728f.582ec1f2.0.0.220957c3FIDOCO
+
+
+二、检索增强生成RAG
+  ETL管道   https://java2ai.com/docs/1.0.0.2/tutorials/basics/ETL/?spm=4347728f.582ec1f2.0.0.220957c3FIDOCO
+  嵌入模型 (Embedding Model)   https://java2ai.com/docs/1.0.0.2/tutorials/basics/embedding/?spm=4347728f.582ec1f2.0.0.220957c3FIDOCO
+  检索增强生成RAG（Retrieval-Augmented Generation） https://java2ai.com/docs/1.0.0.2/tutorials/basics/RAG/?spm=4347728f.582ec1f2.0.0.220957c3FIDOCO
+  文档检索 (Document Retriever) https://java2ai.com/docs/1.0.0.2/tutorials/basics/retriever/?spm=4347728f.582ec1f2.0.0.220957c3FIDOCO
+  向量存储(Vector Store)  https://java2ai.com/docs/1.0.0.2/tutorials/basics/vectorstore/?spm=4347728f.582ec1f2.0.0.220957c3FIDOCO
+
+
+三. AI协议及工具
+  MCP
+  模型上下文协议（Model Context Protocol）
+  MCP客户端启动器
+  MCP服务端启动器
+  MCP 工具类
+  使用 Spring AI Alibaba MCP 结合 Nacos 实现企业级智能体应用-介绍
+  工具调用（Tool Calling）
+
+
+四、可观测性可评估等
+ 开发时服务   https://java2ai.com/docs/1.0.0.2/tutorials/basics/docker-compose/?spm=4347728f.582ec1f2.0.0.220957c3FIDOCO
+ Testcontainers
+ 模型评估
+ 可观测性
