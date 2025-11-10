@@ -19,10 +19,10 @@
 
 
 三. AI协议及工具
-  MCP
-  模型上下文协议（Model Context Protocol）
-  MCP客户端启动器
-  MCP服务端启动器
+  MCP https://java2ai.com/docs/1.0.0.2/tutorials/basics/MCP/?spm=4347728f.2f169869.0.0.394c697bNKHZib
+  模型上下文协议（Model Context Protocol） https://java2ai.com/docs/1.0.0.2/tutorials/basics/model-context-protocol/?spm=4347728f.2f169869.0.0.394c697bNKHZib
+  MCP客户端启动器  https://java2ai.com/docs/1.0.0.2/tutorials/basics/MCP-client/?spm=4347728f.2f169869.0.0.394c697bNKHZib
+  MCP服务端启动器  https://java2ai.com/docs/1.0.0.2/tutorials/basics/MCP-server/?spm=4347728f.2f169869.0.0.394c697bNKHZib
   MCP 工具类
   使用 Spring AI Alibaba MCP 结合 Nacos 实现企业级智能体应用-介绍
   工具调用（Tool Calling）
