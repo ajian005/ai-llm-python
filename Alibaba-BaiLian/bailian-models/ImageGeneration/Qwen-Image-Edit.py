@@ -48,3 +48,5 @@ else:
     print(f"错误码：{response.code}")
     print(f"错误信息：{response.message}")
     print("请参考文档：https://help.aliyun.com/zh/model-studio/developer-reference/error-code")
+
+    
